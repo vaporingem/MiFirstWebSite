@@ -1,0 +1,83 @@
+html{
+    background: linear-gradient(to bottom, #00D2C8, #0033D2);
+    height: 100%;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    flex: 1;
+}
+
+aside#der {
+    align-self: flex-start; 
+    margin-left: 20px; 
+    width: 30%; 
+}
+form{
+	border: 3px solid white;
+	border-radius: 10px;
+	background: linear-gradient(to bottom, #6300D2, #291045);
+}
+fieldset{
+	border: none;
+}
+h1#Login{
+	font-size: 30px;
+	color: white;
+}
+#logo{
+    font-family: impact;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav li{
+    display: inline;
+    margin-right: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+nav{
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    width: 60%;
+    margin: 0 auto;
+
+}
+nav a:hover{
+    background-color: white;
+    color: black;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid black;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
