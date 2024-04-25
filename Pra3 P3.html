@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sacar RFC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333333;
+        }
+        input[type="text"],
+        input[type="submit"],
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #b3d4a3;
+            border-radius: 4px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #5cb85c;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #5cb85c;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #5cb85c;
+        }
+        h1 {
+            text-align: center;
+            color: #5cb85c;
+        }
+    </style>
+</head>
+<body>
+
+<h1>RFC</h1>
+
+<form name="formu" id="formu">
+    <label for="nombre">Escribe tu nombre</label>
+    <input type="text" id="nombre" name="nombre"><br/>
+    
+    <label for="ap">Escribe tu apellido paterno</label>
+    <input type="text" id="ap" name="ap"><br/>
+    
+    <label for="am">Escribe tu apellido materno</label>
+    <input type="text" id="am" name="am"><br/>
+    
+    <label for="anio">Escribe tu año de nacimiento</label>
+    <input type="text" id="anio" name="anio"><br/>
+    
+    <label for="mes">Escribe tu mes de nacimiento</label>
+    <input type="text" id="mes" name="mes"><br/>
+    
+    <label for="dia">Escribe tu dia de nacimiento</label>
+    <input type="text" id="dia" name="dia"><br/>
+    
+    <label for="resultado">Resultado</label>
+    <input type="text" id="resultado" name="resultado" readonly><br/>
+</form>
+
+<input type="button" value="Generar el RFC" onclick="genera_rfc()">
+
+<script>
+    function genera_rfc() {
+        let nombre = document.getElementById("nombre").value.toUpperCase();
+        let ap = document.getElementById("ap").value.toUpperCase();
+        let am = document.getElementById("am").value.toUpperCase();
+        let anio = document.getElementById("anio").value.slice(-2);
+        let mes = ("0" + document.getElementById("mes").value).slice(-2);
+        let dia = ("0" + document.getElementById("dia").value).slice(-2);
+
+        let rfc = ap.slice(0, 2) + am.slice(0, 1) + nombre.slice(0, 1) + anio + mes + dia;
+        
+        document.getElementById("resultado").value = rfc;
+    }
+</script>
+
+</body>
+</html>
